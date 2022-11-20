@@ -1,6 +1,8 @@
 import pyttsx3
 import datetime
 import wikipedia
+import webbrowser
+import os
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -41,6 +43,13 @@ def searchWiki(str):
         else:
             speak("I couldn't find anything related to that")
 
+# Try to get this to work for firefox
+def openSite(url):
+    url = url + ".com"
+    webbrowser.open(url)
+
+accessible_sites = ["google", "youtube", "stackoverflow"]
+accessible_apps = []
 
 if __name__ == "__main__":
     greet()
@@ -50,3 +59,8 @@ if __name__ == "__main__":
 
         if "wiki" in query:
             searchWiki(query)
+        
+        elif "open" in query:
+            openRequest = query.split(" ")
+            if openRequest[1] in accessible_sites:
+                openSite(openRequest[1])
