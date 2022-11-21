@@ -1,8 +1,11 @@
 import pyttsx3
 import datetime
+import time
 import wikipedia
 import webbrowser
 import os
+import subprocess
+import pyjokes
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -48,8 +51,16 @@ def openSite(url):
     url = url + ".com"
     webbrowser.open(url)
 
+def openApp(appName):
+    print(appName)
+    os.startfile(app_routes[appName])
+
+
+
 accessible_sites = ["google", "youtube", "stackoverflow"]
-accessible_apps = []
+accessible_apps = ["spotify", "whatsapp"]
+app_routes = {"spotify" : "", 
+                "whatsapp" : "C:\\Users\\gouri\\AppData\\Local\\WhatsApp\\WhatsApp.exe"}
 
 if __name__ == "__main__":
     greet()
@@ -62,5 +73,18 @@ if __name__ == "__main__":
         
         elif "open" in query:
             openRequest = query.split(" ")
-            if openRequest[1] in accessible_sites:
-                openSite(openRequest[1])
+            if openRequest[-1] in accessible_sites:
+                speak("Sure, just hold on a moment")
+                openSite(openRequest[-1])
+            elif openRequest[-1] in accessible_apps:
+                speak("Sure, just hold on a moment")
+                openApp(openRequest[-1])
+            else:
+                speak("I couldn't quite find anything like that")
+            
+        elif "joke" in query:
+            speak(pyjokes.get_joke())
+        
+        elif "that's all" in query:
+            speak("Have a nice day")
+            exit()
