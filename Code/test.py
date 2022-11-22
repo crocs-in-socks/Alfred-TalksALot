@@ -1,7 +1,10 @@
-import pyttsx3
+import requests
+from bs4 import BeautifulSoup
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
+goog_search = "https://www.google.com/search?client=firefox-b-d&q=hello+there"
 
-for voice in voices:
-    print(voice)
+r = requests.get(goog_search)
+
+soup = BeautifulSoup(r.text, "html.parser")
+brief = soup.find_all()
+print(brief)

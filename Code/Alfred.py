@@ -5,11 +5,15 @@ import webbrowser
 import os
 import pyjokes
 import pywhatkit
+import requests
+from bs4 import BeautifulSoup
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 engine.setProperty('rate', 150)
+
+base_url = "https://www.google.com/search?client=firefox-b-d&q="
 
 accessible_sites = ["google", "youtube", "stackoverflow"]
 accessible_apps = ["spotify", "whatsapp", "notepad", "calculator", "githubdesktop"]
@@ -66,7 +70,13 @@ def searchWiki(str):
 
 def searchInGeneral(topic):
     """Searches google"""
+    # try:
+    #     topic = topic.replace(" ", "+")
+    #     url = base_url + topic
+    #     result = requests.get(url)
+    #     soup = BeautifulSoup(result.text, "html.parser")
 
+    # except:
     pywhatkit.search(topic)
 
 def play(video):
