@@ -1,3 +1,7 @@
-import webbrowser
+import pyttsx3
 
-print(webbrowser._browsers)
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+
+for voice in voices:
+    print(voice)
