@@ -69,6 +69,11 @@ def searchInGeneral(topic):
 
     pywhatkit.search(topic)
 
+def play(video):
+    """Plays a video from youtube"""
+
+    pywhatkit.playonyt(video)
+
 # Try to get this to work for firefox
 def openSite(url):
     """Opens a website"""
@@ -101,13 +106,17 @@ if __name__ == "__main__":
                 openApp(openRequest[-1])
             else:
                 speak("I couldn't quite find anything like that")
-            
-        elif "joke" in query:
-            speak(pyjokes.get_joke())
         
-        elif "what" in query:
+        elif ("what" in query) or ("how" in query):
             searchInGeneral(query)
         
+        elif "play" in query:
+            query = query.replace("play ", "")
+            play(query)
+        
+        elif "joke" in query:
+            speak(pyjokes.get_joke())
+
         elif "shutdown" in query:
             speak("Do you want to shutdown the system?")
             confirmation = input()
