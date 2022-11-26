@@ -5,6 +5,7 @@ import webbrowser
 import os
 import pyjokes
 import pywhatkit
+import winshell
 import requests
 from bs4 import BeautifulSoup
 
@@ -77,7 +78,11 @@ def searchInGeneral(topic):
     #     soup = BeautifulSoup(result.text, "html.parser")
 
     # except:
-    pywhatkit.search(topic)
+    if ("who" in query):
+        topic = topic.replace("who is ", "")
+        searchWiki(topic)
+    else:
+        pywhatkit.search(topic)
 
 def play(video):
     """Plays a video from youtube"""
@@ -117,7 +122,7 @@ if __name__ == "__main__":
             else:
                 speak("I couldn't quite find anything like that")
         
-        elif ("what" in query) or ("how" in query):
+        elif ("what" in query) or ("how" in query) or ("who" in query):
             searchInGeneral(query)
         
         elif "play" in query:
@@ -126,6 +131,10 @@ if __name__ == "__main__":
         
         elif "joke" in query:
             speak(pyjokes.get_joke())
+        
+        elif "clear recycle bin" in query:
+            speak("Hold on a moment sir, I'll clear out the recycle bin")
+            winshell.recycle_bin.empty(confirm=False, show_progress=True, sound=True)
 
         elif "shutdown" in query:
             speak("Do you want to shutdown the system?")
