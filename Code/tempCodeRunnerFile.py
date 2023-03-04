@@ -1,1 +1,0 @@
-print(soup.find('cite').text)
