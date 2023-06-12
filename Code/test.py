@@ -7,4 +7,3 @@ r = requests.get(goog_search)
 
 soup = BeautifulSoup(r.text, "html.parser")
 brief = soup.find_all()
-print(brief)

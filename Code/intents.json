@@ -1,0 +1,139 @@
+{
+    "intents": [
+        {
+            "tag": "greetings",
+            "patterns": [
+                "hello",
+                "hey",
+                "yo",
+                "hi",
+                "howdy",
+                "greetings",
+                "how's it going",
+                "how you going"
+            ],
+            "responses": [
+                "Good day sir!",
+                "Greetings sir!",
+                "What is it sir?"
+            ]
+        },
+        {
+            "tag": "open_app",
+            "patterns": [
+                "open",
+                "launch",
+                "could you open",
+                "the app",
+                "start"
+            ],
+            "responses": [
+                "Sure thing sir! Give me a moment.",
+                "Right on sir!",
+                "Launching."
+            ]
+        },
+        {
+            "tag": "search_wiki",
+            "patterns": [
+                "what is",
+                "wiki",
+                "wikipedia",
+                "explain",
+                "elaborate",
+                "get me details on",
+                "detail"
+            ],
+            "responses": [
+                "Sure thing sir! Give me a moment.",
+                "Right on sir!"
+            ]
+        },
+        {
+            "tag": "respond_to_message",
+            "patterns": [
+                "tell",
+                "reply to",
+                "message",
+                "text",
+                "say"
+            ],
+            "responses": [
+                "Texting mentioned contact."
+            ]
+        },
+        {
+            "tag": "alarm",
+            "patterns": [
+                "set an alarm",
+                "an alarm",
+                "wake me up at"
+            ],
+            "responses": [
+                "The alarm has been set."
+            ]
+        },
+        {
+            "tag": "remind",
+            "patterns": [
+                "remind me to",
+                "don't forget",
+                "don't let me forget",
+                "set a reminder to",
+                "create a reminder to"
+            ],
+            "responses": [
+                "Reminding will be done."
+            ]
+        },
+        {
+            "tag": "weather",
+            "patterns": [
+                "what's it like today",
+                "weather",
+                "forecast",
+                "do I need an umbrella",
+                "what do the skies foretell",
+                "what is the weather",
+                "sunny"
+            ],
+            "responses": [
+                "Today's weather"
+            ]
+        },
+        {
+            "tag": "just_chatting",
+            "patterns": [
+                "what's up alfred"
+            ],
+            "responses": [
+                "Just chatting mode activated"
+            ]
+        },
+        {
+            "tag": "business",
+            "patterns": [
+                "back to business"
+            ],
+            "responses": [
+                "Going back to business"
+            ]
+        },
+        {
+            "tag": "ThinkAlfredThink",
+            "patterns": [
+                "that was wrong",
+                "you got that wrong",
+                "that doesn't seem right",
+                "are you sure you understood that",
+                "you dumb",
+                "incorrect"
+            ],
+            "responses": [
+                "Oh? Are you approaching me? Dio? Instead of running away you're coming to me?",
+                "I can't beat the shit out of you without getting closer",
+                "Your next line will be..."
+            ]
+        }
+    ]
+}
