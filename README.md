@@ -1,4 +1,4 @@
 # Alfred-TalksALot
-So, with some experience now, I've come to realise and appreciate the enormous amount of difficult work that goes behind natural language processing. As such, I'm planning on building a multiclass classification neural network to decide the intent behind each request.
+Currently, Alfred is makes use of a artificial neural network that uses intents.json as the training features. Based on the intents.json, Alfred picks which category of query the user has asked him.
 
-Besides this, I plan to add file searching features and other custom commands to flesh out the assistant.
+I plan to take this further by implementing specific functionaity for each of these categories.
